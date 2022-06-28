@@ -39,9 +39,9 @@ def quit():
 command_dict = {
     '1': ['添加员工信息',add_staff],
     '2': ['修改员工薪资',fix_staff],
-    '3': ['查看指定员工',add_staff],
-    '4': ['查看所有员工',add_staff],
-    '5': ['删除员工数据',add_staff],
+    '3': ['查看指定员工',check_one_info],
+    '4': ['查看所有员工',check_all_info],
+    '5': ['删除员工数据',delete_staff],
     '6': ['退出',quit]
 }
 staff_dict = {}
