@@ -52,6 +52,7 @@ while True:
                 continue
             else:
                 staff_dict[id] = [name,age,job,salary]
+                print(f'id为{id}的员工信息已添加')
         else:
             print('员工信息已存在')
     elif choice == '2':
@@ -59,6 +60,7 @@ while True:
         if id in staff_dict:
             salary = input('请输入员工的薪资>>:').strip()
             staff_dict[id][3]=salary
+            print(f'id为{id}的员工薪资修改成功')
         else:
             print('用户信息不存在')
     elif choice == '3':
@@ -70,10 +72,12 @@ while True:
         id = input('请输入员工的编号>>:').strip()
         if id not in staff_dict:
             staff_dict.pop(id)
+            print(f'id为{id}的员工数据已删除')
         else:
             print('用户信息不存在')
     elif choice == 'q':
         print('退出')
+        break
     else:
         print('输入有误，请重新输入指令')
 
