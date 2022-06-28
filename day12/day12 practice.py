@@ -70,7 +70,9 @@ while True:
         print(staff_dict)
     elif choice == '5':
         id = input('请输入员工的编号>>:').strip()
-        if id not in staff_dict:
+        if not id:
+            print('员工编号不能为空')
+        elif id in staff_dict:
             staff_dict.pop(id)
             print(f'id为{id}的员工数据已删除')
         else:

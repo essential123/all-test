@@ -58,7 +58,9 @@ def check_all_info():
     print(staff_dict)
 def delete_staff():
     id = input('请输入员工的编号>>:').strip()
-    if id not in staff_dict:
+    if not id:
+        print('员工编号不能为空')
+    elif id in staff_dict:
         staff_dict.pop(id)
         print(f'id为{id}的员工数据已删除')
     else:
