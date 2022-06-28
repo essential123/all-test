@@ -1,3 +1,32 @@
+# 1.统计列表中每个数据值出现的次数并组织成字典战士
+# 	eg: l1 = ['jason','jason','kevin','oscar']
+#       结果:{'jason':2,'kevin':1,'oscar':1}
+# 	真实数据
+#     	l1 = ['jason','jason','kevin','oscar','kevin','tony','kevin']
+
+#
+# l1 = ['jason','jason','kevin','oscar','kevin','tony','kevin']
+# result_dict = {}
+#
+# for i in l1:
+#     count = 0
+#     if i not in result_dict:
+#         count+=1
+#         result_dict[i]=count
+#     else:
+#         result_dict[i]+=1
+# print(result_dict)
+
+
+
+# 2.编写员工管理系统
+#     1.添加员工信息
+#     2.修改员工薪资
+#     3.查看指定员工
+#     4.查看所有员工
+#     5.删除员工数据
+# 	 提示:用户数据有编号、姓名、年龄、岗位、薪资
+#     数据格式采用字典:思考如何精准定位具体数据>>>:用户编号的作用
 def add_staff():
     id = input('请输入员工的编号>>:').strip()
     if not id:
