@@ -9,18 +9,25 @@ def add_user():
     user = input('请输入您要添加的用户>>:').strip()
     if user not in user_list:
         user_list.append(user)
+        print('%s用户添加成功' % user)
+
 
 def look_user():
     print(user_list)
+
 
 def delete_user():
     user = input('请输入您要添加的用户>>:').strip()
     if user in user_list:
         user_list.remove(user)
+        print('%s用户删除成功' % user)
     else:
         print('删除的用户名不存在')
+
+
 def quit():
     exit()
+
 
 command_list = {
     '1': ['添加用户名功能', add_user],
@@ -29,11 +36,11 @@ command_list = {
     '4': ['退出', quit]
 }
 
-user_list=[]
+user_list = []
 
 while True:
-    for k,v in command_list.items():
-        print(k,v[0])
+    for k, v in command_list.items():
+        print(k, v[0])
     command = input('请输入您要执行的功能的数字>>:').strip()
     if command in command_list.keys():
         command_list[command][1]()
@@ -76,36 +83,3 @@ while True:
 # 4. 求出没有同时这两门课程的学员名字集合
 # print(pythons ^ linuxs)
 # {'oscar', 'biubiu', 'ricky', 'kevin', 'tony', 'kermit', 'jason'}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
