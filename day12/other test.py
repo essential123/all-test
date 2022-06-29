@@ -19,7 +19,7 @@
 # print(u'你好')
 
 # dict1 = {
-#     'name':'京津冀',
+#     'test':'京津冀',
 #     'age':18,
 #     'hobby':'game',
 #     'sex': 'man',
@@ -27,7 +27,7 @@
 # }
 #
 # dict2={
-#     'name':'xxx',
+#     'test':'xxx',
 #     'age':18,
 #     'work': 'linux'
 # }
@@ -36,7 +36,7 @@
 # print(dict1)
 #
 # dict1 = {
-#     'name':'京津冀',
+#     'test':'京津冀',
 #     'age':18,
 #     'hobby':'game',
 #     'sex': 'man',

@@ -2,7 +2,7 @@
 # print(l1.index(4))
 
 # dict1 ={
-#     'name':'asd',
+#     'test':'asd',
 #     'z':'asd',
 #     'x':'asd',
 #     'c':'asd'

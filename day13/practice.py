@@ -98,11 +98,6 @@ import os
 
 filename = 'userinfo.txt'
 
-if __name__ == '__main__':
-    if os.path.exists(filename):
-        pass
-    else:
-        os.mknod(filename)
 
 
 while True:
@@ -149,4 +144,9 @@ while True:
     else:
         print('输入有误，请输入正确的指令')
 
+if __name__ == '__main__':
+    if os.path.exists(filename):
+        pass
+    else:
+        os.mknod(filename)
 
