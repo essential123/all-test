@@ -45,37 +45,210 @@
 #         print('输入有误，请输入正确的指令')
 
 
+
+#
+#
+# 第二版
+# import os
+# print('''
+#     1,注册
+#     2,登录
+# ''')
+#
+# filename = r'userinfo.txt'
+# while True:
+#     choice = input('请输入指令功能>>:').strip()
+#     if choice == '1':
+#         username = input('请输入您的用户名>>:').strip()
+#         password = input('请输入您的密码>>:').strip()
+#         if os.path.exists(filename):
+#             f0 = open('userinfo.txt', 'rt', encoding='utf-8')
+#             all_data = f0.readlines()
+#         elif username not in all_data:
+#             if username and password:
+#                 f1 = open('userinfo.txt', 'at', encoding='utf-8')
+#                 data =f'{username}:{password}\n'
+#                 f1.write(data)
+#                 f1.close()
+#                 print(f'{username}注册成功')
+#         else:
+#             print('输入不能为空')
+#     elif choice == '2':
+#         if os.path.exists(filename):
+#             f2=open('userinfo.txt', 'rt', encoding='utf-8')
+#             username = input('请输入您的用户名>>:').strip()
+#             password = input('请输入您的密码>>:').strip()
+#             login_user = username + ':' + password
+#             if username and password:
+#                 data=f2.readlines()
+#                 for i in data:
+#                     info = i.replace('\n', '')
+#                     if login_user == info:
+#                         print('登录成功')
+#                         f2.close()
+#                     else:
+#                         print('账户或者密码错误')
+#             else:
+#                 print('输入不能为空')
+#         else:
+#             print('没有用户信息，请先注册')
+#     else:
+#         print('输入有误，请输入正确的指令')
+
+import os
 print('''
     1,注册
     2,登录
+    3,退出
 ''')
 
+filename = r'userinfo.txt'
 while True:
     choice = input('请输入指令功能>>:').strip()
     if choice == '1':
         username = input('请输入您的用户名>>:').strip()
         password = input('请输入您的密码>>:').strip()
-        if username and password:
+        if os.path.exists(filename):
+            f0 = open('userinfo.txt', 'rt', encoding='utf-8')
+            all_data = f0.readlines()
+            if username and password:
+                f1 = open('userinfo.txt', 'at', encoding='utf-8')
+                data = f'{username}:{password}\n'
+                if data not in all_data:
+                    f1.write(data)
+                    f1.close()
+                    print(f'{username}注册成功')
+                else:
+                    print('用户已存在')
+        elif username and password:
             f1 = open('userinfo.txt', 'at', encoding='utf-8')
-            data =f'username:{username},password:{password}'
+            data =f'{username}:{password}\n'
             f1.write(data)
             f1.close()
+            print(f'{username}注册成功')
         else:
             print('输入不能为空')
     elif choice == '2':
-        with open('userinfo.txt', 'rt', encoding='utf-8') as f2:
+        if os.path.exists(filename):
+            f2=open('userinfo.txt', 'rt', encoding='utf-8')
             username = input('请输入您的用户名>>:').strip()
             password = input('请输入您的密码>>:').strip()
+            login_user = username + ':' + password
             if username and password:
-                user,pwd = f2.read()
-                if username == user and password == pwd:
-                    print('登录成功')
-                else:
-                    print('账户或者密码错误')
+                data=f2.readlines()
+                for i in data:
+                    info = i.replace('\n', '')
+                    if login_user == info:
+                        print('登录成功')
+                        f2.close()
+                    else:
+                        print('账户或者密码错误')
             else:
                 print('输入不能为空')
+        else:
+            print('没有用户信息，请先注册')
+    elif choice == '3':
+        exit()
     else:
         print('输入有误，请输入正确的指令')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
