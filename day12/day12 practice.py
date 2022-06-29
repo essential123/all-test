@@ -4,20 +4,18 @@
 # 	真实数据
 #     	l1 = ['jason','jason','kevin','oscar','kevin','tony','kevin']
 
-#
-# l1 = ['jason','jason','kevin','oscar','kevin','tony','kevin']
-# result_dict = {}
-#
-# for i in l1:
-#     count = 0
-#     if i not in result_dict:
-#         count+=1
-#         result_dict[i]=count
-#     else:
-#         result_dict[i]+=1
-# print(result_dict)
 
+l1 = ['jason', 'jason', 'kevin', 'oscar', 'kevin', 'tony', 'kevin']
+result_dict = {}
 
+for i in l1:
+    count = 0
+    if i not in result_dict:
+        count += 1
+        result_dict[i] = count
+    else:
+        result_dict[i] += 1
+print(result_dict)
 
 # 2.编写员工管理系统
 #     1.添加员工信息
@@ -42,7 +40,7 @@ while True:
         id = input('请输入员工的编号>>:').strip()
         if not id:
             print('员工编号不能为空')
-        elif id not in staff_dict :
+        elif id not in staff_dict:
             name = input('请输入员工的姓名>>:').strip()
             age = input('请输入员工的年龄>>:').strip()
             job = input('请输入员工的岗位>>:').strip()
@@ -51,7 +49,7 @@ while True:
                 print('员工信息不能为空，请重新输入')
                 continue
             else:
-                staff_dict[id] = [name,age,job,salary]
+                staff_dict[id] = [name, age, job, salary]
                 print(f'id为{id}的员工信息已添加')
         else:
             print('员工信息已存在')
@@ -59,7 +57,7 @@ while True:
         id = input('请输入员工的编号>>:').strip()
         if id in staff_dict:
             salary = input('请输入员工的薪资>>:').strip()
-            staff_dict[id][3]=salary
+            staff_dict[id][3] = salary
             print(f'id为{id}的员工薪资修改成功')
         else:
             print('用户信息不存在')
@@ -82,196 +80,3 @@ while True:
         break
     else:
         print('输入有误，请重新输入指令')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
