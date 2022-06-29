@@ -97,11 +97,13 @@
 import os
 
 filename = 'userinfo.txt'
+
 if __name__ == '__main__':
     if os.path.exists(filename):
         pass
     else:
-        f=open('filename', 'at', encoding='utf-8')
+        os.mknod(filename)
+
 
 while True:
     print('''
@@ -113,10 +115,10 @@ while True:
     if choice == '1':
         username = input('请输入您的用户名>>:').strip()
         password = input('请输入您的密码>>:').strip()
-        f0 = open('filename', 'rt', encoding='utf-8')
+        f0 = open(filename, 'rt', encoding='utf-8')
         all_data = f0.readlines()
         if username and password:
-            f1 = open('filename', 'at', encoding='utf-8')
+            f1 = open(filename, 'at', encoding='utf-8')
             data = f'{username}:{password}\n'
             if data not in all_data:
                 f1.write(data)
@@ -124,12 +126,6 @@ while True:
                 print(f'{username}注册成功')
             else:
                 print('用户已存在')
-        elif username and password:
-            f1 = open('filename', 'at', encoding='utf-8')
-            data = f'{username}:{password}\n'
-            f1.write(data)
-            f1.close()
-            print(f'{username}注册成功')
         else:
             print('输入不能为空')
     elif choice == '2':
@@ -152,3 +148,5 @@ while True:
         exit()
     else:
         print('输入有误，请输入正确的指令')
+
+
