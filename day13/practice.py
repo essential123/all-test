@@ -95,10 +95,12 @@
 #         print('输入有误，请输入正确的指令')
 
 import os
-
 filename = 'userinfo.txt'
 
-
+if os.path.exists(filename):
+    pass
+else:
+    f1 = open(filename, 'a', encoding='utf-8')
 
 while True:
     print('''
@@ -124,19 +126,18 @@ while True:
         else:
             print('输入不能为空')
     elif choice == '2':
-        f2 = open('filename', 'rt', encoding='utf-8')
+        f2 = open(filename, 'rt', encoding='utf-8')
         username = input('请输入您的用户名>>:').strip()
         password = input('请输入您的密码>>:').strip()
         login_user = username + ':' + password
         if username and password:
             data = f2.readlines()
-            for i in data:
-                info = i.replace('\n', '')
-                if login_user == info:
-                    print('登录成功')
-                    f2.close()
-                else:
-                    print('账户或者密码错误')
+            info = [i.replace('\n', '') for i in data]
+            if login_user in info:
+                print('登录成功')
+            else:
+                print('账户或者密码错误')
+            f2.close()
         else:
             print('输入不能为空')
     elif choice == '3':
@@ -144,9 +145,7 @@ while True:
     else:
         print('输入有误，请输入正确的指令')
 
-if __name__ == '__main__':
-    if os.path.exists(filename):
-        pass
-    else:
-        os.mknod(filename)
+
+
+
 
