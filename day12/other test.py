@@ -51,9 +51,13 @@
 # # 不指定默认的键值，默认为 None
 # new_dict = dict.fromkeys(seq)
 # print(new_dict)
+# list = [1,2,3,3,44,5,6,8]
+# list.pop(-2)
+# print(list)
 
-
-
+source_file_path = input('请输入想要拷贝的源数据路径>>:').strip()
+target_file_path = input('请输入拷贝到哪个目标路径>>:').strip()
+# with open()
 
 
 
