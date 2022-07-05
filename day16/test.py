@@ -158,9 +158,16 @@ x = 1
 # l1[-1]()  # func（） func()--->from func
 
 
+# 统计目录下所有文件的大小
+# import os
+# sum_size = 0
+# for file in os.listdir('.'):
+#     if os.path.isfile(file):
+#         sum_size +=os.path.getsize(file)
+# print(sum_size)
 
-
-
+import os
+print(os.getcwd())
 
 
 
