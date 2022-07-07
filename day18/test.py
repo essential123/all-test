@@ -45,3 +45,36 @@
 #
 # res = index()
 # print(res)
+
+
+# def outter(db_type):
+#     def deco(func):
+#         def inner(*args, **kwargs):
+#             username = input('请输入你都名字>>:').strip()
+#             password = input('请输入你的密码>>:').strip()
+#             if username == 'jason' and password == '123':
+#                 if db_type == 'file':
+#                     print('数据基于文件的验证')
+#                 elif db_type == 'list':
+#                     print('数据基于列表的验证')
+#                 else:
+#                     print('不支持db_type')
+#                 res = func(*args, **kwargs)
+#                 return res
+#             else:
+#                 print('账号或者密码错误')
+#         return inner
+#
+#     return deco
+#
+#
+# @outter(db_type='file')
+# def index():
+#     print('from index')
+#
+#
+# @outter(db_type='list')
+# def func2():
+#     print('from index')
+#
+# index()
