@@ -65,26 +65,21 @@
 # print(new_l2)
 
 
-class Iter(object):
-    def __init__(self):
-        self.counter = 0
-    def __iter__(self):
-        return self
-    def __next__(self):
-        self.counter+=1
-        if self.counter==3:
-            raise StopIteration()
-        return self.counter
-
-
-
-
-
-
-
-
-
-
-
-
-
+# class Iter(object):
+#     def __init__(self):
+#         self.counter = 0
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         self.counter += 1
+#         if self.counter == 3:
+#             raise StopIteration()
+#         return self.counter
+#
+#
+# obj1 = Iter()
+# print(list(obj1))
+# # obj2 = Iter()
+# # obj3 = Iter()
