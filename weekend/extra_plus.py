@@ -24,45 +24,59 @@ user_data = {
     '3': {'name': 'oscar', 'pwd': '222', 'access': ['1']}
 }
 
+login_data = {
+    'is_login' : False
+}
 
-def outter(func_name):
-    def wrapper(*args, **kwargs):
-        if username == user_data[choice]['name'] and password == user_data[choice]['pwd']:
-            access_list = user_data[choice]['access']
-            if args[0] in access_list:
-                res = func_name(*args, **kwargs)
-                return res
+while True:
+    choice = input('请输入编号>>:').strip()
+    if choice in user_data:
+        username = input('请输入名字>>:').strip()
+        password = input('请输入密码>>:').strip()
+        break
+    else:
+        print('编号输入有误')
+        continue
+
+def outter(a):
+    def wrapper(func_name):
+        def inner(*args, **kwargs):
+            if username and password:
+                if username == user_data[choice]['name'] and password == user_data[choice]['pwd']:
+                    login_data['is_login']=False
+                    access_list = user_data[choice]['access']
+                    if a in access_list:
+                        res = func_name(*args, **kwargs)
+                        return res
+                    else:
+                        print('当前用户暂无此编号:%s函数的权限' % a)
+                else:
+                    login_data['is_login']=True
             else:
-                print('当前用户暂无此编号:%s函数的权限' % args[0])
-        else:
-            print('用户名或者密码错误')
-
+                print('输入不能为空')
+        return inner
 
     return wrapper
 
 
-@outter
+@outter('1')
 def func1(*args, **kwargs):
     print('from func1')
 
 
-@outter
+@outter('2')
 def func2(*args, **kwargs):
     print('from func2')
 
 
-@outter
+@outter('3')
 def func3(*args, **kwargs):
     print('from func3')
 
 
-if __name__ == '__main__':
+func1()
+func2()
+func3()
 
-    choice = input('请输入编号>>:').strip()
-    if choice:
-        username = input('请输入名字>>:').strip()
-        password = input('请输入密码>>:').strip()
-
-        func1('1', choice, username, password)
-        func2('2', choice, username, password)
-        func3('3', choice, username, password)
+if login_data['is_login']:
+    print('用户名或者密码错误')
