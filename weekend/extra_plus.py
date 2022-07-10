@@ -41,19 +41,16 @@ while True:
 def outter(a):
     def wrapper(func_name):
         def inner(*args, **kwargs):
-            if username and password:
-                if username == user_data[choice]['name'] and password == user_data[choice]['pwd']:
-                    login_data['is_login']=False
-                    access_list = user_data[choice]['access']
-                    if a in access_list:
-                        res = func_name(*args, **kwargs)
-                        return res
-                    else:
-                        print('当前用户暂无此编号:%s函数的权限' % a)
+            if username == user_data[choice]['name'] and password == user_data[choice]['pwd']:
+                login_data['is_login']=False
+                access_list = user_data[choice]['access']
+                if a in access_list:
+                    res = func_name(*args, **kwargs)
+                    return res
                 else:
-                    login_data['is_login']=True
+                    print('当前用户暂无此编号:%s函数的权限' % a)
             else:
-                print('输入不能为空')
+                login_data['is_login']=True
         return inner
 
     return wrapper
