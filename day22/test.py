@@ -49,24 +49,45 @@
 # print(res.__next__())
 
 
-def add(n, i):  # 普通函数 返回两个数的和  求和函数
-    return n + i
+# def add(n, i):  # 普通函数 返回两个数的和  求和函数
+#     return n + i
+#
+#
+# def test():  # 生成器
+#     for i in range(4):
+#         yield i  # (0,1,2,3)
+#
+#
+# g = test()  # 激活生成器[函数体有yield的，函数名加括号调用，产生返回值（用g接收一下返回值）,g变成了一个迭代器对象(生成器)]
+#
+# for n in [1, 10]:  # n第一次循环是1，第二次循环是10
+#     g = (add(n, i) for i in g)
+#     """
+#     第一次for循环
+#         g = (add(1, i) for i in g)
+#     第二次for循环
+#         g = (add(10, i) for i in (add(10, i) for i in g))
+#     """
+# res = list(g)
+# print(res)
 
+# l1 = [1,2,3,4,5,6]
+# res=l1.__iter__()
+# print(res.__next__())
 
-def test():  # 生成器
-    for i in range(4):
-        yield i  # (0,1,2,3)
+# try:
+#     1/0
+# except Exception as e:
+#     print('出错了')
 
-
-g = test()  # 激活生成器[函数体有yield的，函数名加括号调用，产生返回值（用g接收一下返回值）,g变成了一个迭代器对象(生成器)]
-
-for n in [1, 10]:  # n第一次循环是1，第二次循环是10
-    g = (add(n, i) for i in g)
-    """
-    第一次for循环
-        g = (add(1, i) for i in g)
-    第二次for循环
-        g = (add(10, i) for i in (add(10, i) for i in g))
-    """
-res = list(g)
-print(res)
+# range(1,10)
+# def my_range(start,end):
+#     while start<end:
+#         yield start
+#         start+=1
+# for i in my_range(1,10):
+#     print(i)
+# # range(10)
+# def my_range(start,end=None):
+#     while True:
+#
