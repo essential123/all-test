@@ -53,9 +53,10 @@ def login():
     while True:
         username = input('请输入用户名>>:').strip()
         if username:
-            if user_status['is_login']:
-                print('%s用户已登录' % username)
-                continue
+            if username == user_status['username']:
+                if user_status['is_login']:
+                    print('%s用户已登录' % username)
+                    continue
             file_path = os.path.join(db_path, username)
             if not os.path.isfile(file_path):
                 print('用户名不存在,请先注册')
@@ -148,6 +149,7 @@ def settlement_shopping_cards():
         if current_balance > total_money:
             current_balance -= total_money
             user_dict['balance'] = current_balance
+            user_dict['shopping_cards']={}
             with open(file_path, 'w', encoding='utf8') as f:
                 json.dump(user_dict, f)
             print(f'您今日消费：{total_money},您的余额为:{current_balance}')
