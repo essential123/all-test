@@ -30,13 +30,26 @@ from collections import OrderedDict
 # res = 'qwertyuiosdfghjkwertyhvn'
 # print(Counter(res))
 
-from collections import defaultdict
-staff_dict=defaultdict()
-# staff_dict = defaultdict(int)
-staff_dict['name']='jaosn'
-print(staff_dict['name'])
-print(staff_dict['age'])
+# from collections import defaultdict
+# staff_dict=defaultdict()
+# # staff_dict = defaultdict(int)
+# staff_dict['name']='jaosn'
+# print(staff_dict['name'])
+# print(staff_dict['age'])
 
 # import time
 # time.struct_time
-# time.
+
+# from collections import defaultdict
+#
+# l1 = [('yellow',1), ('yellow',2), ('yellow',3)]
+# d = defaultdict(list)
+# for k,v in l1:
+#     d[k].append(v)
+# print(sorted(d.items()))
+
+
+from collections import defaultdict
+
+
+
