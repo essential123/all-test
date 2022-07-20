@@ -75,7 +75,6 @@ def login():
         else:
             print('输入不能为空')
 
-
 goods_list = [
     ['挂壁面', 3],
     ['印度飞饼', 22],
@@ -130,6 +129,18 @@ def check_shop_car():
         for item in shop_card_info.items():
             print(f"商品名称:{item[0]}  |  商品数量:{item[1][0]}  |  商品单价:{item[1][1]}")
 
+@auth_user
+def Edit_Shopping_Cart():
+    file_path = os.path.join(db_path, user_status.get('username'))
+    while True:
+        for i, j in enumerate(goods_list):
+            print(f"商品编号:{i} , 商品名称：{j[0]} , 商品价格：{j[1]}")
+        with open(file_path, 'r', encoding='utf8') as f:
+            user_dict = json.load(f)
+            shop_card_info = user_dict.get('shopping_cards')
+            goods_choice = input('请输入你想要的商品编号(输入q退出)>>:').strip()
+
+
 
 @auth_user
 def settlement_shopping_cards():
@@ -167,7 +178,8 @@ command_dict = {
     '2': ['用户登录', login],
     '3': ['添加购物车', add_shopping_cards],
     '4': ['查看购物车', check_shop_car],
-    '5': ['结算购物车', settlement_shopping_cards],
+    '5': ['修改购物车', Edit_Shopping_Cart],
+    '6': ['结算购物车', settlement_shopping_cards],
     'q': ['退出', out]
 }
 
