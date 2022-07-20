@@ -132,14 +132,42 @@ def check_shop_car():
 @auth_user
 def Edit_Shopping_Cart():
     file_path = os.path.join(db_path, user_status.get('username'))
-    while True:
-        for i, j in enumerate(goods_list):
-            print(f"商品编号:{i} , 商品名称：{j[0]} , 商品价格：{j[1]}")
-        with open(file_path, 'r', encoding='utf8') as f:
-            user_dict = json.load(f)
-            shop_card_info = user_dict.get('shopping_cards')
-            goods_choice = input('请输入你想要的商品编号(输入q退出)>>:').strip()
+    with open(file_path, 'r', encoding='utf8') as f:
+        user_dict = json.load(f)
+        shop_card_info = user_dict.get('shopping_cards')
+        # print(shop_card_info) # {'伊拉克拌面': ['111', 1000]}
+        if not shop_card_info:
+            print('购物车未添加任何物品')
+        while True:
+            goods_info = { }
+            for i, j in enumerate(shop_card_info):
+                goods_info[i]=j
+                print(f"商品编号:{i} , 商品名称：{j} , 商品数量：{shop_card_info[j][0]},商品单价：{shop_card_info[j][1]}")  # 商品编号:0 , 商品名称：伊拉克拌面 , 商品数量：111,商品单价：1000
 
+            id = input('请输入想要修改的商品编号(输入q退出)>>:').strip()
+            if id == 'q':
+                break
+            for id in goods_info:
+                goods = goods_info[id]
+                if goods in shop_card_info:
+                    print('0:增加, 1：减少')
+                    command = input('请输入增加或者减少的编号(输入q退出)>>:').strip()
+                    count = input('请输入想要修改的商品数量>>:').strip()
+                    goods_count=shop_card_info[goods][0]
+                    goods_count = int(goods_count)
+                    if command == 'q':
+                        break
+                    if command == '0':
+                        goods_count += int(count)
+                    elif command == '1':
+                        goods_count -= int(count)
+                        if goods_count == 0:
+                            del shop_card_info[goods]
+                    else:
+                        print('输入错误')
+            shop_card_info[goods][0]=goods_count
+            with open(file_path, 'w', encoding='utf8') as f:
+                json.dump(user_dict, f)
 
 
 @auth_user
