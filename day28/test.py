@@ -65,3 +65,10 @@ import re
 # wb2.append([None,18,'male',''])
 #
 # wb.save(r'company.xlsx')
+
+# res = re.search('a(b)c','abcabcabcabc')
+# print(res)
+# print(res.group()) # abc
+# print(res.group(0)) # abc
+# print(res.group(1)) # b
+

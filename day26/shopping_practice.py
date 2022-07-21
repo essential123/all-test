@@ -150,19 +150,21 @@ def Edit_Shopping_Cart():
             for id in goods_info:
                 goods = goods_info[id]
                 if goods in shop_card_info:
-                    print('0:增加, 1：减少')
+                    print('1:增加, 2：减少, 3:移除商品')
                     command = input('请输入增加或者减少的编号(输入q退出)>>:').strip()
                     count = input('请输入想要修改的商品数量>>:').strip()
                     goods_count=shop_card_info[goods][0]
                     goods_count = int(goods_count)
                     if command == 'q':
                         break
-                    if command == '0':
+                    if command == '1':
                         goods_count += int(count)
-                    elif command == '1':
+                    elif command == '2':
                         goods_count -= int(count)
                         if goods_count == 0:
                             del shop_card_info[goods]
+                    elif command == '3':
+                        del shop_card_info[goods]
                     else:
                         print('输入错误')
             shop_card_info[goods][0]=goods_count
