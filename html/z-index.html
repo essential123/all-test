@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自定义模态框</title>
+  <style>
+    .cover {
+      background-color: rgba(0,0,0,0.65);
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 998;
+    }
+
+    .modal {
+      background-color: white;
+      position: fixed;
+      width: 600px;
+      height: 400px;
+      left: 50%;
+      top: 50%;
+      margin: -200px 0 0 -300px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+<div>我在最底下</div>
+<div class="cover"></div>
+<div class="modal">
+    <form action="">
+        <p>username:<input type="text"></p>
+        <p>password:<input type="password"></p>
+    </form>
+</div>
+</body>
+</html>
+

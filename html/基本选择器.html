@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*1.标签选择器:直接编写标签名来查找标签*/
+        div {
+            color: green;  /*查找所有的div标签 并将内部的文本颜色变为绿色*/
+        }
+        /*2.类选择器:通过编写class的值来查找标签*/
+        .c1 {
+            color:red;  /*查找所有class属性中含有c1的标签 并将内部的文本颜色变为红色*/
+        }
+        /*3.id选择器:通过编写id的值来精准查找标签*/
+        #d1 {
+            color: aquamarine;  /*查找id值是d1的标签 并将内部的文本颜色改为天青色*/
+        }
+        /*4.通用选择器:查找所有的标签*/
+        * {
+            color: blue;  /*查找所有的标签 并将内部的文本颜色改为蓝色*/
+        }
+    </style>
+</head>
+<body>
+  <div id="d1">div</div>
+  <p class="c1">p</p>
+  <span>span</span>
+  <div class="c1">div</div>
+  <div id="d2">div</div>
+</body>
+</html>

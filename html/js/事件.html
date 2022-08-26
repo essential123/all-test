@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点我" onclick="func1()">
+<button id="d1">按我</button>
+<script>
+    // 绑定事件方式1：提前写好函数，标签内部指定
+    // function func1(){
+    //     alert(123)
+    // }
+
+    //绑定事件方式2：先查找标签，然后批量绑定
+    let bntEle = document.getElementById('d1')
+    bntEle.onclick=function (){
+        alert(123)
+    }
+</script>
+</body>
+</html>

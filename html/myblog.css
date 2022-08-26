@@ -1,0 +1,115 @@
+/*这是简易版本博客园首页的样式*/
+
+/*页面通用样式*/
+body {
+    margin: 0;
+    background-color: #eeeeee;
+}
+a{
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: '';
+    display: block;
+    clear:both;
+}
+/*左侧页面样式*/
+.blog-left {
+    background-color: rgb(37,70,101);
+    float:left;
+    position: fixed;
+    height: 100%;
+    width:20%;
+    top:0;
+    left:0;
+}
+.blog-avatar {
+    border: 5px solid white;
+    height: 130px;
+    width: 130px;
+    border-radius:50% ;
+    margin: 20px auto;
+    overflow:hidden;
+}
+.blog-avatar img {
+    max-width: 100%;
+}
+
+
+
+.blog-title {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 楷体;
+    font-weight: bold;
+    text-align: center;
+    padding:10px
+}
+.blog-desc {
+    color:rgb(255,255,255);
+    font-size: 16px;
+    text-align: center;
+    padding:10px
+}
+.blog-link a,.blog-info a {
+    color: white;
+    font-size: 18px;
+}
+
+
+.blog-link a:hover,.blog-info a:hover{
+    color: cornflowerblue;
+}
+
+.blog-link ul,.blog-info ul {
+    text-align: center;
+    margin:50px auto;
+}
+
+.blog-link li,.blog-info li {
+    padding: 3px;
+}
+
+/*右侧页面样式*/
+.blog-right {
+    float: right;
+    width:80%;
+}
+
+.article-list {
+    background-color: white;
+    margin: 20px 40px 20px 20px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+    padding: 10px;
+}
+
+.article-title {
+    border-left: 3px solid red;
+}
+
+.article-title .title {
+    font-size: 25px;
+    margin-left:16px;
+    font-family: 黑体;
+}
+
+.article-title .date {
+    font-size: 10px;
+    float: right;
+    font-weight: bolder;
+    margin:10px 20px;
+}
+.article-desc{
+    font-size: 16px;
+    padding: 10px;
+    text-indent: 23px;
+
+}
+.article-link {
+    margin: 15px;
+}

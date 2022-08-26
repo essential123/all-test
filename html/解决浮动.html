@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin:0
+        }
+        .c1 {
+            height: 30px;
+            width: 100px;
+            background-color: red;
+            float: left;
+        }
+        .c2 {
+            height: 30px;
+            width: 100px;
+            background-color: greenyellow;
+            float: right;
+        }
+        .c3 {
+            border: solid 5px;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+  <div class="c3 clearfix" >
+      <div class="c1"></div>
+      <div class="c2"></div>
+  </div>
+</body>
+</html>

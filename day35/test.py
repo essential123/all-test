@@ -19,53 +19,14 @@
 # import pickle
 # with open(r'a.txt','wb')as f:
 #     f.write(pickle.dump(f))
+#
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# class Student():
+#     def __init__(self, name):
+#         self.name = name
+# stu = Student('jason')
+# print(stu.__class__, type(stu.__class__))
+# print(stu.__class__.__name__, type(stu.__class__.__name__))
+# print(Student.__name__, type(Student.__name__))
 

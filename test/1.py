@@ -1,3 +1,7 @@
-with open('a.txt','rt',encoding='utf-8')as f:
-    data=f.readlines()
-    print(data)
+# class Person:
+#     def __init__(self):
+#         pass
+#     def get_name(self):
+#         print(__name__)
+# p = Person()
+# p.get_name()

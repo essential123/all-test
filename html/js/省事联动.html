@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市联动</title>
+</head>
+<body>
+省<select name="" id="province">
+    <option>请选择省:</option>
+</select>
+市<select name="" id="city">
+    <option>请选择市:</option>
+</select>
+
+<script>
+    let data = {
+        "河北省": ["廊坊", "邯郸"],
+        "北京": ["朝阳区", "海淀区"],
+        "山东": ["威海市", "烟台市"],
+        '上海': ['浦东新区','青浦区']
+    };
+    for(let pro in data){
+        let opEle = document.createElement('option');
+        opEle.innerText = pro
+        opEle.setAttribute('value',pro)
+    }
+</script>
+</body>
+</html>

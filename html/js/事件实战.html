@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+     <input type="text " id="username">
+    <span class="errors" style="color: red"></span>
+</p>
+
+<p>
+        <input type="text" id="password">
+        <span class="errors" style="color: red"></span>
+</p>
+    <button id="btn">提交</button>
+<script>
+    let btnEle =document.getElementById('btn')
+    btnEle.onclick=function (){
+        let usernameVal = document.getElementById('username').value;
+        let passWordVal = document.getElementById('password').value;
+        if(usernameVal==='jason'){
+            let span1Ele =document.getElementsByClassName('errors')[0];
+            span1Ele.innerText='用户名不能是Jason'
+        }
+        if(passWordVal.length === 0){
+            let span1Ele =document.getElementsByClassName('errors')[1];
+            span1Ele.innerText='密码不能为空'
+        }
+    }
+</script>
+</body>
+</html>
