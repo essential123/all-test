@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<div name="time" disabled id="ct"></div>
+<input type="button" value="开始计时" class="开">
+<input type="button" value="结束计时" class="关">
+<script>
+    var tt;
+    let t1Ele = document.getElementsByClassName('开')[0]
+    let t2Ele = document.getElementsByClassName('关')[0]
+    function showTime() {
+        let t = new Date()
+        document.getElementById('ct').innerHTML = t.getFullYear() + '年' + (t.getMonth() + 1) + '月' + t.getDate() + '日' + t.getHours() + ':' + t.getMinutes() + ':' + t.getSeconds();}
+    showTime();
+    t1Ele.onclick = function () {
+        if (!tt) {
+            tt = setInterval(showTime, 1000);//每一秒中重新加载func1()方法
+        }
+    }
+    t2Ele.onclick = function () {
+        clearInterval(tt)
+        tt = undefined
+    }
+</script>
+</body>
+</html>

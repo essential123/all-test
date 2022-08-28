@@ -6,10 +6,10 @@
 </head>
 <body>
 省<select name="" id="province">
-    <option>请选择省:</option>
+<!--    <option>请选择省:</option>-->
 </select>
 市<select name="" id="city">
-    <option>请选择市:</option>
+<!--    <option>请选择市:</option>-->
 </select>
 
 <script>
@@ -17,7 +17,8 @@
         "河北省": ["廊坊", "邯郸"],
         "北京": ["朝阳区", "海淀区"],
         "山东": ["威海市", "烟台市"],
-        '上海': ['浦东新区','青浦区']
+        '上海': ['浦东新区','青浦区'],
+        '安徽': ['芜湖','合肥'],
     };
     for(let pro in data){
         let opEle = document.createElement('option');

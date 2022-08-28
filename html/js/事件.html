@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        window.onload = function () {
+            let btnEle = document.getElementsByTagName('input')
+            for (let i = 0; i < btnEle.length;i++){
+                btnEle[i].onclick = function () {
+                    alert(321)
+                    console.log(this)
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-<input type="button" value="点我" onclick="func1()">
-<button id="d1">按我</button>
-<script>
-    // 绑定事件方式1：提前写好函数，标签内部指定
-    // function func1(){
-    //     alert(123)
-    // }
-
-    //绑定事件方式2：先查找标签，然后批量绑定
-    let bntEle = document.getElementById('d1')
-    bntEle.onclick=function (){
-        alert(123)
-    }
-</script>
+<input type="button" value="点我" ondblclick="func1() ">
+<input type="button" value="点我" ondblclick="func1() ">
+<input type="button" value="点我" ondblclick="func1() ">
+<input type="button" value="点我" ondblclick="func1() ">
 </body>
 </html>

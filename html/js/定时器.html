@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<input type="text" id="i1">
+<button id="b1">开始</button>
+<button id="b2">结束</button>
+
+<script>
+    var t;
+    function showTime() {
+        var i1Ele = document.getElementById('i1');
+        var time = new Date();
+        i1Ele.value = time.toLocaleString();
+    }
+    showTime();
+    var b1Ele = document.getElementById('b1');
+    b1Ele.onclick = function (ev) {
+        if (!t){
+            t = setInterval(showTime,1000)
+        }
+    };
+    var b2Ele = document.getElementById('b2');
+    b2Ele.onclick = function (ev) {
+       clearInterval(t);
+       t = undefined
+    };
+
+</script>
+</body>
+</html>

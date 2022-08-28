@@ -6,27 +6,31 @@
 </head>
 <body>
 <p>
-     <input type="text " id="username">
+    用户名:<input type="text" id="username">
+    <span class="errors" style="color: red"></span>
+</p>
+<p>
+    密码:<input type="password" id="password">
     <span class="errors" style="color: red"></span>
 </p>
 
-<p>
-        <input type="text" id="password">
-        <span class="errors" style="color: red"></span>
-</p>
-    <button id="btn">提交</button>
+<button id="btn">提交</button>
+
 <script>
-    let btnEle =document.getElementById('btn')
-    btnEle.onclick=function (){
-        let usernameVal = document.getElementById('username').value;
-        let passWordVal = document.getElementById('password').value;
-        if(usernameVal==='jason'){
-            let span1Ele =document.getElementsByClassName('errors')[0];
-            span1Ele.innerText='用户名不能是Jason'
+    // 1.查找按钮标签
+    let btnEle = document.getElementById('btn')
+    // 2.绑定点击事件
+    btnEle.onclick = function () {
+        let userNameEle = document.getElementById('username').value
+        let passWordEle = document.getElementById('password').value
+
+        if (userNameEle === 'jason') {
+            let span1Ele = document.getElementsByTagName('span')[0]
+            span1Ele.innerText = '账号不能是jason'
         }
-        if(passWordVal.length === 0){
-            let span1Ele =document.getElementsByClassName('errors')[1];
-            span1Ele.innerText='密码不能为空'
+        if (passWordEle.length === 0) {
+            let span2Ele = document.getElementsByTagName('span')[1]
+            span2Ele.innerText = '密码不能为空'
         }
     }
 </script>
